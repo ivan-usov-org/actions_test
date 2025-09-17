@@ -12,11 +12,11 @@ jobs:
 
     - name: Debug
       run: |
+        $CONDA/bin/conda config --system --remove channels defaults
         cat $CONDA/.condarc
 
     - name: Prepare
       run: |
-        $CONDA/bin/conda config --add channels conda-forge
-        $CONDA/bin/conda config --add channels paulscherrerinstitute
-        $CONDA/bin/conda config --append channels nodefaults
+        $CONDA/bin/conda config --append channels paulscherrerinstitute
+        $CONDA/bin/conda config --append channels conda-forge
         $CONDA/bin/conda install --quiet --yes conda-build anaconda-client
