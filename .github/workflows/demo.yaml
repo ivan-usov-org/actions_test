@@ -14,5 +14,5 @@ jobs:
       run: |
         $CONDA/bin/conda config --add channels conda-forge
         $CONDA/bin/conda config --add channels paulscherrerinstitute
-        $CONDA/bin/conda config --remove channels defaults
+        $CONDA/bin/conda config --add channels nodefaults
         $CONDA/bin/conda install --quiet --yes conda-build anaconda-client
