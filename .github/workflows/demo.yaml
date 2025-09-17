@@ -12,7 +12,7 @@ jobs:
 
     - name: Debug
       run: |
-        ls -lA $CONDA
+        cat $CONDA/.condarc
 
     - name: Prepare
       run: |
