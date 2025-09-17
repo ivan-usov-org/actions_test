@@ -10,9 +10,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Debug
+      run: |
+        ls -lA $CONDA
+
     - name: Prepare
       run: |
         $CONDA/bin/conda config --add channels conda-forge
         $CONDA/bin/conda config --add channels paulscherrerinstitute
-        $CONDA/bin/conda config --add channels nodefaults
+        $CONDA/bin/conda config --append channels nodefaults
         $CONDA/bin/conda install --quiet --yes conda-build anaconda-client
