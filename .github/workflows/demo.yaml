@@ -12,22 +12,21 @@ jobs:
     - uses: conda-incubator/setup-miniconda@v3
       with:
         miniforge-version: latest
+        conda-build-version: latest
         channels: paulscherrerinstitute, conda-forge
         conda-remove-defaults: true
         activate-environment: ""
 
     - name: Debug
       run: |
-        conda info -e
-        conda config --show channels
         conda list
-
-    - name: Debug2
-      run: |
-        $CONDA/bin/conda list
 
     - name: Prepare
       run: |
-        $CONDA/bin/conda config --append channels paulscherrerinstitute
-        $CONDA/bin/conda config --append channels conda-forge
-        $CONDA/bin/conda install --quiet --yes conda-build anaconda-client
+        conda install --quiet --yes anaconda-client
+
+    - name: Debug2
+      run: |
+        conda info -e
+        conda config --show channels
+        conda list
