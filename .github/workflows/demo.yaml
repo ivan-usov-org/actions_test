@@ -12,7 +12,6 @@ jobs:
     - uses: conda-incubator/setup-miniconda@v3
       with:
         miniforge-version: latest
-        conda-build-version: latest
         channels: paulscherrerinstitute, conda-forge
         conda-remove-defaults: true
         activate-environment: ""
@@ -23,7 +22,7 @@ jobs:
 
     - name: Prepare
       run: |
-        conda install --quiet --yes anaconda-client
+        conda install --quiet --yes conda-build anaconda-client
 
     - name: Debug2
       run: |
