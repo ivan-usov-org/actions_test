@@ -19,12 +19,12 @@ jobs:
 
     - name: Debug
       run: |
-        conda list
+        $CONDA/bin/conda list
 
     - name: Prepare
       run: |
-        conda install --quiet --yes conda-build anaconda-client
+        $CONDA/bin/conda install --quiet --yes conda-build anaconda-client
 
     - name: Debug2
       run: |
-        anaconda -h
+        $CONDA/bin/anaconda -h
