@@ -26,6 +26,4 @@ jobs:
 
     - name: Debug2
       run: |
-        conda info -e
-        conda config --show channels
-        conda list
+        anaconda -h
