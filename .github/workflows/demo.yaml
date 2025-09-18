@@ -9,11 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        miniforge-version: latest
 
     - name: Debug
       run: |
-        $CONDA/bin/conda config --system --remove channels defaults
-        $CONDA/bin/conda config --show
+        conda config --show
+        conda list
 
     - name: Debug2
       run: |
