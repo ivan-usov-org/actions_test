@@ -14,8 +14,7 @@ jobs:
         miniforge-version: latest
         channels: paulscherrerinstitute, conda-forge
         conda-remove-defaults: true
-        auto-activate-base: true
-        activate-environment: "base"
+        activate-environment: ""
 
     - name: Debug
       run: |
