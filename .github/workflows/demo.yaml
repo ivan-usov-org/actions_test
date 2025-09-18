@@ -13,9 +13,12 @@ jobs:
       with:
         miniforge-version: latest
         channels: paulscherrerinstitute, conda-forge
+        conda-remove-defaults: true
 
     - name: Debug
       run: |
+        conda info -e
+        conda config --show channels
         conda list
 
     - name: Debug2
