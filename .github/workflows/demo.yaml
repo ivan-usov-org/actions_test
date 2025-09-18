@@ -11,12 +11,11 @@ jobs:
     - uses: actions/checkout@v4
     - uses: conda-incubator/setup-miniconda@v3
       with:
-        installation-dir: $HOME/miniforge3
         miniforge-version: latest
+        channels: paulscherrerinstitute, conda-forge
 
     - name: Debug
       run: |
-        conda config --show
         conda list
 
     - name: Debug2
