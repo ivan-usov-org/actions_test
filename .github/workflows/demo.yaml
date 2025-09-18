@@ -13,7 +13,7 @@ jobs:
     - name: Debug
       run: |
         $CONDA/bin/conda config --system --remove channels defaults
-        cat $CONDA/.condarc
+        $CONDA/bin/conda config --get solver
 
     - name: Debug2
       run: |
